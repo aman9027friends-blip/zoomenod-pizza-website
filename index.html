@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoomeno'd Pizza</title>
+    <style></style> <linkrel="stylesheet" href="css/style.css"</style>
+   
+
+    
+    
+</head>
+<body>
+
+    <header>
+        <h1>🍕 Zoomeno'd Pizza</h1>
+        <p>जूमेनो'ड पिज़्ज़ा</p>
+        <p>⭐ 4.5 Rating (295 Reviews)</p>
+        <p>💰 ₹1–200 | Pizza Restaurant</p>
+    </header>
+
+    <hr>
+
+    <nav>
+        <a href="#overview">Overview</a> |
+        <a href="#menu">Menu</a> |
+        <a href="#reviews">Reviews</a> |
+        <a href="#about">About</a>
+    </nav>
+
+    <hr>
+    <form>
+    <label>Name:</label>
+    <input type="text" required>
+
+    <label>Phone:</label>
+    <input type="tel" required>
+
+    <label>Pizza:</label>
+    <select id="pizza">
+    <option value="149">Margherita - ₹149</option>
+    <option value="249">Farmhouse - ₹249</option>
+    <option value="299">Cheese Burst - ₹299</option>
+</select>
+
+    <button type="button" onclick="placeOrder()">Place Order</button>
+    <h3 id="result"></h3>
+</form>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>
+            Delicious pizzas, fast service, and a comfortable dining experience.
+        </p>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li>Margherita Pizza - ₹149</li>
+            <li>Veggie Supreme - ₹199</li>
+            <li>Farmhouse Pizza - ₹249</li>
+            <li>Cheese Burst Pizza - ₹299</li>
+        </ul>
+    </section>
+
+    <section id="reviews">
+        <h2>Reviews</h2>
+        <p>⭐⭐⭐⭐⭐ "Amazing taste and service!"</p>
+        <p>⭐⭐⭐⭐ "Good pizza at affordable prices."</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p><strong>Location:</strong> Kherli Nehar Tiraha, Sikandrabad</p>
+
+        <h3>Services</h3>
+        <ul>
+            <li>✅ Dine-in</li>
+            <li>✅ Drive-through</li>
+            <li>✅ No-contact Delivery</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 Zoomeno'd Pizza. All Rights Reserved.</p>
+    </footer>
+    <script>
+function placeOrder() {
+
+    let name = document.querySelector('input[type="text"]').value;
+    let phone = document.querySelector('input[type="tel"]').value;
+    let pizza = document.getElementById("pizza");
+    
+    let pizzaName = pizza.options[pizza.selectedIndex].text;
+    let pizzaPrice = pizza.value;
+
+    if(name === "" || phone === ""){
+        alert("Please fill all details!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    `
+    ✅ Order Placed Successfully!<br>
+    👤 Name: ${name}<br>
+    📞 Phone: ${phone}<br>
+    🍕 Pizza: ${pizzaName}<br>
+    💰 Total: ₹${pizzaPrice}
+    `;
+
+    alert("Thank you for ordering from Zoomeno'd Pizza!");
+}
+</script>
+
+</body>
+</html>

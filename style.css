@@ -1,0 +1,110 @@
+header h1 {
+    background-color: rgb(233, 246, 47);
+    display: flex;
+    color: #e5180d;
+    background-color: yellow;
+    text-shadow: #e5180d;
+}
+body{
+    background-color: yellow;
+}
+header p {
+    color: rgb(45, 14, 243);
+    display: flex;
+    text-transform: capitalize;
+    text-decoration-line: underline;
+    text-overflow: ellipsis;
+    text-decoration-color: #e5180d;
+    text-indent: 0cap;
+}
+button{
+    background-color: #e5180d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #ff3b2f;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #e5180d;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+nav{
+    color: #e5180d;
+    container-type: calc();
+    text-transform: capitalize;
+   
+}
+ nav a:hover{
+    color: blue;
+    font-size: 18px;
+
+}
+section h2 {
+    color: #e5180d;
+    text-decoration-line: underline;
+
+}
+/* Header Animation */
+header h1{
+    animation: glow 2s infinite alternate;
+}
+
+/* Paragraph Animation */
+header p{
+    animation: slideIn 2s ease-in-out;
+}
+
+/* Navigation Hover Animation */
+nav a{
+    transition: 0.4s;
+}
+
+nav a:hover{
+    color: white;
+    transform: scale(1.2);
+}
+
+/* Section Heading Animation */
+section h2{
+    animation: bounce 2s infinite;
+}
+
+/* Keyframes */
+
+@keyframes glow{
+    from{
+        text-shadow: 0 0 5px red;
+    }
+    to{
+        text-shadow: 0 0 20px red, 0 0 40px orange;
+    }
+}
+
+@keyframes slideIn{
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
